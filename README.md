@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎬 Catálogo de Filmes
 
-## Getting Started
+Aplicação **CRUD completa** desenvolvida com **Next.js 16**, **React 18** e **Bootstrap 5**, utilizando o **MockAPI.io** para simular o backend.
 
-First, run the development server:
+O projeto permite **criar, listar, editar e deletar filmes** em uma base de dados remota, demonstrando o funcionamento completo de uma API REST integrada a uma aplicação moderna em Next.js (usando o App Router).
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **Next.js 16 (App Router)**
+- **React 18**
+- **Bootstrap 5**
+- **Axios**
+- **MockAPI.io** (backend simulado)
+- **JavaScript (ES2023)**
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+catalogo-filmes/
+├── app/
+│   ├── api/
+│   │   └── filmes/
+│   │       ├── route.js           # Proxy para MockAPI (GET/POST)
+│   │       └── [id]/route.js      # Proxy para MockAPI (GET/PUT/DELETE)
+│   ├── filmes/
+│   │   ├── criar/page.js          # Página para criar filme
+│   │   ├── listar/page.js         # Página para listar filmes
+│   │   ├── editar/[id]/page.js    # Página para editar filme
+│   │   └── deletar/[id]/page.js   # Página para deletar filme
+│   ├── layout.js                  # Layout global (Navbar e estilos)
+│   └── page.js                    # Página inicial
+├── components/
+│   └── Navbar.js                  # Barra de navegação
+├── styles/
+│   └── globals.css                # Estilos globais
+├── .env.local                     # Variáveis de ambiente (MockAPI)
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Configuração e Execução
+
+### 1️⃣ Clonar o repositório
+
+```bash
+git clone https://github.com/seuusuario/catalogo-filmes.git
+cd catalogo-filmes
+```
+
+### 2️⃣ Instalar dependências
+
+```bash
+npm install
+```
+
+### 3️⃣ Criar o arquivo `.env.local`
+
+Crie um arquivo chamado `.env.local` na raiz do projeto com o seguinte conteúdo:
+
+```env
+MOCKAPI_BASE=https://690bda266ad3beba00f65a06.mockapi.io/api/v1
+```
+
+> 🔹 Substitua o link acima pelo **seu endpoint real** do MockAPI caso crie um novo projeto.
+
+### 4️⃣ Rodar o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse em:  
+👉 **http://localhost:3000**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Funcionalidades
 
-## Learn More
+| Página | Caminho | Descrição |
+|---------|----------|-----------|
+| 🏠 **Início** | `/` | Página principal com atalhos para CRUD |
+| 📋 **Listar Filmes** | `/filmes/listar` | Mostra todos os filmes cadastrados |
+| ➕ **Criar Filme** | `/filmes/criar` | Adiciona um novo filme à base |
+| ✏️ **Editar Filme** | `/filmes/editar/[id]` | Atualiza informações de um filme existente |
+| 🗑️ **Deletar Filme** | `/filmes/deletar/[id]` | Remove um filme definitivamente |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Backend — MockAPI.io
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O projeto consome a API gerada automaticamente pelo **MockAPI**, com o seguinte endpoint base:
 
-## Deploy on Vercel
+```
+https://690bda266ad3beba00f65a06.mockapi.io/api/v1/filmes
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Cada filme contém os seguintes campos:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Campo | Tipo | Descrição |
+|--------|------|-----------|
+| `id` | string | Gerado automaticamente |
+| `nome` | string | Nome do filme |
+| `genero` | string | Gênero cinematográfico |
+| `ano` | string | Ano de lançamento |
+
+---
+
+## 🧩 API Interna (Next.js)
+
+A aplicação possui rotas **internas de API** (`/api/filmes`) que funcionam como um **proxy seguro** para o MockAPI, evitando problemas de CORS e mantendo a arquitetura limpa.
+
+### Endpoints internos
+
+| Método | Caminho | Descrição |
+|--------|----------|-----------|
+| `GET` | `/api/filmes` | Retorna todos os filmes |
+| `POST` | `/api/filmes` | Cria um novo filme |
+| `GET` | `/api/filmes/:id` | Retorna um filme específico |
+| `PUT` | `/api/filmes/:id` | Atualiza um filme existente |
+| `DELETE` | `/api/filmes/:id` | Exclui um filme |
+
+---
+
+## 🎨 Layout
+
+O layout foi desenvolvido com **Bootstrap 5** e **CSS personalizado**, garantindo um visual moderno, responsivo e leve — sem dependência de TailwindCSS.
+
+---
+
+## 🧑‍💻 Autores
+
+**João Marcelo Simão de Castro**  
+**Yasmim Sayuri Anami de Assis**
+
+---
+
+## 📝 Licença
+
+Este projeto é de uso educacional e pode ser livremente adaptado e distribuído.
