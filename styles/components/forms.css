@@ -1,0 +1,61 @@
+.form-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control,
+.form-select {
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-fast);
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  font-size: 1rem;
+}
+
+.form-control::placeholder,
+.form-select::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.form-control:hover,
+.form-select:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+input.form-control,
+input.form-control:focus,
+input.form-control:hover,
+input.form-control:active,
+textarea.form-control,
+textarea.form-control:focus,
+textarea.form-control:hover,
+select.form-select,
+select.form-select:focus,
+select.form-select:hover {
+  color: var(--text-primary) !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+

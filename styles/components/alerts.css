@@ -1,0 +1,31 @@
+.alert {
+  border-radius: var(--radius-md);
+  border: none;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.alert-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-left: 4px solid var(--danger-color);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.alert-heading {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+

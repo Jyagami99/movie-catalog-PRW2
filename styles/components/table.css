@@ -1,0 +1,123 @@
+.table-responsive {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.table {
+  margin-bottom: 0;
+  color: var(--text-primary);
+}
+
+.table td,
+.table th {
+  color: inherit;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+  padding: 1rem;
+  border: none;
+}
+
+.table tbody tr {
+  transition: all var(--transition-fast);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary) !important;
+}
+
+.table tbody tr td {
+  color: var(--text-primary) !important;
+}
+
+.table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: scale(1.01);
+  box-shadow: var(--shadow-sm);
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  color: var(--text-primary) !important;
+  background: transparent;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.bg-info {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+  color: white !important;
+}
+
+.badge.text-dark {
+  color: var(--text-light) !important;
+}
+
+.badge.bg-info.text-dark {
+  color: var(--text-light) !important;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(99, 102, 241, 0.2) !important;
+}
+
+.table tbody tr:hover td {
+  color: var(--text-primary) !important;
+}
+
+.table tbody td.fw-bold {
+  font-weight: 600;
+  color: var(--text-primary) !important;
+}
+
+.table tbody td,
+.table tbody th {
+  color: var(--text-primary) !important;
+}
+
+.table-dark {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+}
+
+.table-dark th {
+  color: var(--text-light) !important;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+}
+
+.table input,
+.table textarea,
+.table select {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.table input:focus,
+.table textarea:focus,
+.table select:focus {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.table input::placeholder,
+.table textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
